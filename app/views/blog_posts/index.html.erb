@@ -4,7 +4,7 @@
     <h2>
       <%= link_to blog_post.title , blog_post %>
     </h2>
-    <% if blog_post.draft? %>
+  <% if blog_post.draft? %>
       <div class="bg-gray-100 text-gray-900 p-2 rounded">Draft</div>
     <% elsif blog_post.scheduled? %>
       <div class="bg-blue-100 text-gray-900 p-2 rounded">Schedule</div>
@@ -13,5 +13,8 @@
   </div>
   <% end %>
 <div class="my-16">
-  <%== pagy_nav(@pagy) %>
+<% #console %>
+  <% if @pagy.count > @pagy.items%>
+    <%== pagy_nav(@pagy) %>
+  <% end %>
 </div>
