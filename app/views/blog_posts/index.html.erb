@@ -4,6 +4,11 @@
     <h2>
       <%= link_to blog_post.title , blog_post %>
     </h2>
+    <% if blog_post.draft? %>
+      <div class="bg-gray-100 text-gray-900 p-2 rounded">Draft</div>
+    <% elsif blog_post.scheduled? %>
+      <div class="bg-blue-100 text-gray-900 p-2 rounded">Schedule</div>
+    <% end %>
     <%= blog_post.body%>
   </div>
   <% end %>
